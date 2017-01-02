@@ -39,7 +39,7 @@ def processRequest(req):
     date=parameter.get("date")
     
     
-    data ="hello"+userid+" you have applied for "+leavetype+" on "+date
+    data ="hello"+userid
     res = makeWebhookResult(data)
     return res
 
