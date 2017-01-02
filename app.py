@@ -31,15 +31,9 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "yea":
         return {}
-    result = req.get("result")
-    contexts = result.get("contexts")
-    parameter = contexts.get("parameters")
-    userid=parameter.get("user-id")
-    leavetype=parameter.get("leave-type")
-    date=parameter.get("date")
+      
     
-    
-    data ="hello"+userid
+    data ="hello you reached heroku"
     res = makeWebhookResult(data)
     return res
 
