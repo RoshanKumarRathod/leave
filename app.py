@@ -32,10 +32,9 @@ def processRequest(req):
         return {}
     r=req.get("result")
       d=json.loads(r)
-    id= d.get("contexts").get(0).get("parameters").get("user-id")
-     type= d.get("contexts")..get(0).get("parameters").get("leave-typ")
-        range= d.get("contexts").get(0).get("parameters").get("date")
-    data =id+"hello you reached heroku and your leave type is "+type+" date range is "+range 
+    id= d['contexts'][0]['parameters']['user-id']
+    
+    data =id+"hello you reached heroku and your leave type is "
     res = makeWebhookResult(data)
     return res
 
