@@ -30,7 +30,7 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "yea":
         return {}
-    id=req.get("contexts")
+    id=req.get("contexts").get(0).get("user-id")
     
     
     data =id+"hello you reached heroku and your leave type is "
