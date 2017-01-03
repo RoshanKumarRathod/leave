@@ -20,7 +20,6 @@ def webhook():
     print(json.dumps(req, indent=4))
 
     res = processRequest(req)
-   
     res = json.dumps(res, indent=4)
     # print(res)
     r = make_response(res)
@@ -32,8 +31,10 @@ def processRequest(req):
     if req.get("result").get("action") != "yea":
         return {}
       
-    
-    data ="hello you reached heroku"
+    id= req.get("contexts").get("parameters").get("user-id")
+     type= req.get("contexts").get("parameters").get("leave-typ")
+        range= req.get("contexts").get("parameters").get("date")
+    data =id+"hello you reached heroku and your leave type is "+type+" date range is "+range 
     res = makeWebhookResult(data)
     return res
 
