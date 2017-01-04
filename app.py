@@ -29,8 +29,10 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "yea":
         return {}
+    dummy=json.loads(req)
+    result=dummy.get("result").get("action")
     
-    data="helllllllllllll"
+    data="helllllllllllll"+result
     res = makeWebhookResult(data)
     return res
 
