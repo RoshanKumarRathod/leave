@@ -30,7 +30,8 @@ def processRequest(req):
     if req.get("result").get("action") != "yea":
         return {}
     
-    result=req.get("result").get("contexts").get(0).get("parameters").get("leave-typ")
+    dummy=json.loads(req)
+    result=dummy["result"]["action"]
     
     data="helllllllllllll"+result
     res = makeWebhookResult(data)
