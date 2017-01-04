@@ -10,7 +10,7 @@ from flask import make_response
 
 # Flask app should start in global layout
 app = Flask(__name__)
-
+y=1
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -29,13 +29,10 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "yea":
         return {}
-    if (req.get("contexts"))!=Null:
-        data =req.get("contexts")+"hello you reached heroku and your leave type is "
-        return{data}
-    else:
-        data="helllllllo"
-        return{data}
     
+    if req.get("contexts") is None:
+        return{}
+    data="helllllllllllll"+y
     res = makeWebhookResult(data)
     return res
 
