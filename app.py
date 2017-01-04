@@ -29,9 +29,11 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "yea":
         return {}
-    if req.get("contexts") !=null:
+    if (req.get("contexts"))!=Null:
         data =req.get("contexts")+"hello you reached heroku and your leave type is "
         return{data}
+    else:
+        return{data="helllllllo"}
     
     res = makeWebhookResult(data)
     return res
