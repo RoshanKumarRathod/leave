@@ -26,13 +26,13 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
-
 def processRequest(req):
     if req.get("result").get("action") != "yea":
         return {}
-    r=json.loads(req)
-    id=r["result"]["parameters"]["confirm"]
-    data =id+"hello you reached heroku and your leave type is "
+    if req.get("contexts") !=null:
+        data =req.get("contexts")+"hello you reached heroku and your leave type is "
+        return{data}
+    
     res = makeWebhookResult(data)
     return res
 
