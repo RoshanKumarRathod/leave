@@ -30,7 +30,7 @@ def processRequest(req):
     if req.get("result").get("action") != "yea":
         return {}
     
-    result=req.get("result").get("action")
+    result=req.get("result").get("contexts")
     
     data="helllllllllllll"+result
     res = makeWebhookResult(data)
