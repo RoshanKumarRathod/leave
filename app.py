@@ -10,7 +10,7 @@ from flask import make_response
 
 # Flask app should start in global layout
 app = Flask(__name__)
-y=1
+
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -32,7 +32,7 @@ def processRequest(req):
     
     if req.get("contexts") is None:
         return{}
-    data="helllllllllllll"+y
+    data="helllllllllllll"
     res = makeWebhookResult(data)
     return res
 
